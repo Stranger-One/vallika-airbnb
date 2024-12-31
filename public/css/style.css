@@ -1,153 +1,168 @@
-body{
-  
-   font-family: "Plus Jakarta Sans", serif !important;
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
-    
+body {
+
+  font-family: "Plus Jakarta Sans", serif !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
 }
-.container{
+
+.container {
   flex: 1;
 }
 
- /* navbar */
- .navbar{
-    height: 5rem;
-    background-color: white;
- }
- .fa-compass{
-    color: #fe424d;
-    font-size: 2rem;
-    margin-left: 25px;
- }
- .nav-link{
-    color: #222222 !important;
- }
- .brand{
-    color: #fe424d;
-    margin-right: 25px;
- }
-
-
- /* footer */
- .f-info-links a{
-   text-decoration: none;
-   color: #222222;
- }
- .f-info-links a:hover{
-   text-decoration: underline;
-   color: #222222;
- }
-
- .f-info-links,.f-info-socials,.f-info-brand{
-   width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-  
- }
- 
- 
-.f-info-socials i{
-   margin-right: 2rem;
-   font-size: 1.3rem;
+/* navbar */
+.navbar {
+  height: 5rem;
+  background-color: white;
 }
 
- .f-info{
-   display: flex;
-   height: 8rem;
-   background-color:#ebebeb ;
-   flex-wrap: wrap;
-   justify-content: center;
-   align-items: space-evenly;
-   text-align: center;
- }
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+  margin-left: 25px;
+}
+
+.nav-link {
+  color: #222222 !important;
+}
+
+.brand {
+  color: #fe424d;
+  margin-right: 25px;
+}
 
 
- /* cards */
- .listing-card{
-   border: none !important;
-   margin-bottom: 2rem;
- }
- .card-img-top{
-   border-radius: 1.2rem !important;
-   width: 100% !important;
-   height: 15rem ;
-   object-fit: cover;
- }
- .card-body{
-   padding: 2 !important;
- }
- .card-text {
-   font-weight: 500 !important;
- }
- .card-title{
-   font-weight: 600 !important;
- }
- .listing-link{
-   text-decoration: none;
- }
+/* footer */
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+  color: #222222;
+}
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.f-info-socials i {
+  margin-right: 2rem;
+  font-size: 1.3rem;
+}
+
+.f-info {
+  display: flex;
+  height: 8rem;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  text-align: center;
+}
+
+
+/* cards */
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 1.2rem !important;
+  width: 100% !important;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 2 !important;
+}
+
+.card-text {
+  font-weight: 500 !important;
+}
+
+.card-title {
+  font-weight: 600 !important;
+}
+
+.listing-link {
+  text-decoration: none;
+}
 
 
 
- /* card Effect */
- .card-img-overlay{
-   opacity: 0;
- }
- .card-img-overlay:hover{
-   opacity: 0.2;
-   background-color: rgba(96, 86, 86, 0.923);
-   border-radius: 1.5rem;
- }
+/* card Effect */
+.card-img-overlay {
+  opacity: 0;
+}
 
- /* New Page */
- .addbtn{
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: rgba(96, 86, 86, 0.923);
+  border-radius: 1.5rem;
+}
+
+/* New Page */
+.addbtn {
   background-color: #fe424d !important;
   border: none !important;
- }
+}
 
- /* edit page */
- .edit-btn{
+/* edit page */
+.edit-btn {
   background-color: #fe424d !important;
   border: none !important;
-  
- }
 
- /* show page */
- .show-img{
+}
+
+/* show page */
+.show-img {
   height: 30;
- }
- .btns{
+}
+
+.btns {
   display: flex;
 
- }
- .show-card{
+}
+
+.show-card {
   padding-left: 0;
   padding-right: 0;
- }
+}
 
- /* map */
- #map{
+/* map */
+#map {
   height: 350px;
   width: 100%;
- }
+}
 
- /* media query */
- @media (max-width : 767px) {
-  .back-nav{
-    background-color: #ebebeb ;
+/* media query */
+@media (max-width : 767px) {
+  .back-nav {
+    background-color: #ebebeb;
     /* opacity: .6; */
-    
+
     border-radius: 7%;
     padding: 20px;
     text-align: left;
     margin-top: 10px;
-   }
-   .nav-text{
+  }
+
+  .nav-text {
     font-size: 16px;
-   color: #ebebeb !important;
-    
-   }
-  
- }
- 
+    color: #ebebeb !important;
+
+  }
+
+}

@@ -43,13 +43,15 @@
       </div>
 
       <div class="mb-3" style="width: 100%">
-        <label for="category" class="form-label">Category: </label>
+        <label for="category" class="form-label">Category:</label>
         <select
           name="listing[category]"
           id="category"
-          class="border border-black rounded p-2"
+          class="form-control border border-gray rounded p-2"
           style="width: 100%"
+          required
         >
+          <option value="" disabled selected>Choose Category</option>
           <option value="Trending">Trending</option>
           <option value="Rooms">Rooms</option>
           <option value="Mountains">Mountains</option>
@@ -60,7 +62,9 @@
           <option value="Farms">Farms</option>
           <option value="Arctic">Arctic</option>
         </select>
+        <div class="invalid-feedback">Please select a category</div>
       </div>
+      
 
       <div class="row">
         <div class="mb-3 col-md-4">

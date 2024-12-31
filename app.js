@@ -98,9 +98,9 @@ app.use((req,res,next) => {
 
 
 
+app.use("/",userRouter)
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
-app.use("/",userRouter)
 
 
 // page not found if url not matched with any one of the routing
@@ -115,6 +115,8 @@ app.use((err, req, res, next) => {
   //   res.status(statusCode).send(message);
 });
 
-app.listen(8080, () => {
-  console.log("server is listening to port 8080");
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  console.log(`server is listening to port ${port}`);
 });
