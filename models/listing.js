@@ -21,6 +21,14 @@ const listingSchema = new Schema({
   },
   location: String,
   country: String,
+  category: {
+    type:String,
+    enum:["Trending","Rooms","Iconic Cities","Mountains","Amazing Pools","Camping","Farms"],
+  },
+  coordinates: {
+    lat: Number,
+    lon: Number,
+  },
   reviews:[
     {
       type:Schema.Types.ObjectId,

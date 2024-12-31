@@ -1,10 +1,12 @@
 <% layout("/layouts/boilerplate") %>
 <div class="row mt-3">
-  <div class="col-8 offset-3">
+  <div class="col-12 col-md-8 offset-md-4">
     <h3><%= listing.title %></h3>
   </div>
-  <div class="card listing-card col-6 offset-3 mt-0 mb-0 show-card">
-    <div class="card">
+  <div
+    class="card listing-card col-12 px-3 col-md-6 offset-md-3 mt-0 mb-0 show-card"
+  >
+    <div class="card rounded">
       <img
         src="<%= listing.image.url %>"
         class="card-img-top show-img"
@@ -37,7 +39,7 @@
   </div>
   <% } %>
 
-  <div class="col-6 offset-3 mb-3">
+  <div class="col-12 col-md-6 px-3 offset-md-3 mb-3">
     <% if(currUser){ %>
     <hr />
     <h4>Leave a Review</h4>
@@ -118,7 +120,7 @@
     <div class="row">
       <p>All Reviews</p>
       <% for(review of listing.reviews){ %>
-      <div class="card col-5 ms-3 mb-3">
+      <div class="card col-8 col-md-6 col-lg-5 ms-3 mb-3">
         <div class="card-body">
           <h5 class="card-titl">@<%= review.author.username %></h5>
           <p
@@ -140,15 +142,23 @@
     <% } %>
   </div>
 
-  <div class="col-6 offset-3 mb-3">
+  <div class="col-12 col-md-6 px-3 offset-md-3 mb-3">
     <h3>Where you'll be</h3>
     <div id="map"></div>
+    <div>
+      <p class="card-text" id="lat"></p>
+      <p class="card-text" id="lon"></p>
+    </div>
   </div>
 </div>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map("map").setView([20.2961, 85.8245], 13);
+    const lat = document.getElementById("lat").innerText || 20.2961;
+    const lon = document.getElementById("lon").innerText || 85.8245;
+    // console.log("latitute :", lat, lon);
+
+    var map = L.map("map").setView([lat, lon], 13);
     // osm layer
     var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution:
@@ -157,9 +167,11 @@
     osm.addTo(map);
 
     // marker
-    var singleMarker = L.marker([20.2961, 85.8245]);
+    var singleMarker = L.marker([lat, lon]);
     singleMarker.addTo(map);
-    var popup = singleMarker.bindPopup("This is a popup");
+    var popup = singleMarker.bindPopup(
+      "<p>Exact location provider after booking</p>"
+    );
     popup.addTo(map);
 
     // tile player
@@ -174,12 +186,13 @@
     OpenStreetMap_Mapnik.addTo(map);
 
     // google map layer
-    googleStreets = L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
-    maxZoom: 20,
-    subdomains:['mt0','mt1','mt2','mt3']
-});
-googleStreets.addTo(map);
-
-
+    googleStreets = L.tileLayer(
+      "http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}",
+      {
+        maxZoom: 20,
+        subdomains: ["mt0", "mt1", "mt2", "mt3"],
+      }
+    );
+    googleStreets.addTo(map);
   });
 </script>

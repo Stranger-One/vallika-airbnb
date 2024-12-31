@@ -39,6 +39,8 @@ module.exports.isOwner = async(req,res,next) => {
 
 //for server side mongoose validation
  module.exports.validateListing = (req,res,next) => {
+    // console.log("req body",req.body);
+    
     let {error} = listingSchema.validate(req.body);
     if(error){
         let errMsg = error.details.map((el) => el.message).join(",");
